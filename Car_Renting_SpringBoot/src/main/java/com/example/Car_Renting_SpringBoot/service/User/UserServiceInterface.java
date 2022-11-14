@@ -1,4 +1,4 @@
-package com.example.Car_Renting_SpringBoot.service;
+package com.example.Car_Renting_SpringBoot.service.User;
 
 import com.example.Car_Renting_SpringBoot.entity.User;
 

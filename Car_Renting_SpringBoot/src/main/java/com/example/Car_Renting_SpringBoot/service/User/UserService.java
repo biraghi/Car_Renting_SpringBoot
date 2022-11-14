@@ -1,4 +1,4 @@
-package com.example.Car_Renting_SpringBoot.service;
+package com.example.Car_Renting_SpringBoot.service.User;
 
 import com.example.Car_Renting_SpringBoot.entity.User;
 import com.example.Car_Renting_SpringBoot.repository.UserRepository;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserService implements UserServiceInterface{
+public class UserService implements UserServiceInterface {
     private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {

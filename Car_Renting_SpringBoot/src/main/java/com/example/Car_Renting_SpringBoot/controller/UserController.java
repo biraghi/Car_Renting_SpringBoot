@@ -1,7 +1,7 @@
 package com.example.Car_Renting_SpringBoot.controller;
 
 import com.example.Car_Renting_SpringBoot.entity.User;
-import com.example.Car_Renting_SpringBoot.service.UserService;
+import com.example.Car_Renting_SpringBoot.service.User.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -22,7 +22,7 @@ public class UserController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<User>> getAllCars(){
+    public ResponseEntity<List<User>> getAllUsers(){
         List<User> list = userService.getAll();
         return new ResponseEntity<List<User>>(list, HttpStatus.OK);
     }

@@ -29,10 +29,8 @@ public class Car {
     private String model;
 
     @Column(name="year_registration")
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @NotNull(message = "{NotNull.Car.yearRegistration.validation}")
-    @Past
-    private LocalDate yearRegistration;
+    private String yearRegistration;
 
     @Column(name="license_plate")
     @NotBlank(message = "{NotBlank.Car.licensePlate.validation}")
@@ -48,7 +46,7 @@ public class Car {
 
     public Car(){}
 
-    public Car(String manufacturer, String model, LocalDate yearRegistration, String licensePlate, String typeName) {
+    public Car(String manufacturer, String model, String yearRegistration, String licensePlate, String typeName) {
         this.manufacturer = manufacturer;
         this.model = model;
         this.yearRegistration = yearRegistration;
@@ -78,11 +76,11 @@ public class Car {
         this.model = model;
     }
 
-    public LocalDate getYearRegistration() {
+    public String getYearRegistration() {
         return yearRegistration;
     }
 
-    public void setYearRegistration(LocalDate yearRegistration) {
+    public void setYearRegistration(String yearRegistration) {
         this.yearRegistration = yearRegistration;
     }
 
