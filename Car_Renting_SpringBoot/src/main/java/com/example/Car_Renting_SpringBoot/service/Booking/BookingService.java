@@ -67,4 +67,19 @@ public class BookingService implements BookingServiceInterface{
             return false;
         }
     }
+
+    @Override
+    public boolean setApprove(int id) {
+        if(id != 0 && bookingRepository.findById(id).isPresent()){
+            Booking booking = bookingRepository.findById(id).get();
+            booking.setApprove(true);
+            bookingRepository.save(booking);
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
 }

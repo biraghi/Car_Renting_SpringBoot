@@ -12,4 +12,5 @@ public interface BookingServiceInterface {
     public Booking update(Booking booking, int id);
     public boolean deleteAll();
     public boolean deleteById(int id);
+    public boolean setApprove(int id);
 }

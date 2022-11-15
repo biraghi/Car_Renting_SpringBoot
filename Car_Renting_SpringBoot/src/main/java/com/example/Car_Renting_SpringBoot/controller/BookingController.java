@@ -84,4 +84,17 @@ public class BookingController {
             return new ResponseEntity<Booking>(HttpStatus.OK);
         }
     }
+
+    @PostMapping("/approve")
+    public ResponseEntity<Booking> setApprove(@RequestBody int id){
+        boolean app = bookingService.setApprove(id);
+        if (!app){
+            String ErrMsg = String.format("Booking not found with id %s", id);
+            logger.warn(ErrMsg);
+            return new ResponseEntity<Booking>(HttpStatus.NOT_FOUND);
+        }
+        else {
+            return new ResponseEntity<Booking>(HttpStatus.OK);
+        }
+    }
 }
