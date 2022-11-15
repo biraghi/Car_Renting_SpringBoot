@@ -4,6 +4,8 @@ import com.example.Car_Renting_SpringBoot.entity.Car;
 import com.example.Car_Renting_SpringBoot.repository.CarRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -79,4 +81,20 @@ public class CarService implements CarServiceInterface{
             return false;
         }
     }
+
+    @Override
+    public List<Car> carNotBooked(LocalDate start, LocalDate finish) {
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//        LocalDate startDate = LocalDate.parse(start, formatter);
+//        LocalDate finishDate = LocalDate.parse(finish, formatter);
+        if (carRepository.findCarNotBooked(start, finish).isPresent()){
+            return carRepository.findCarNotBooked(start, finish).get();
+        }
+        else{
+            return null;
+        }
+
+    }
+
+
 }
